@@ -90,7 +90,7 @@ const useFirebase = () => {
     async function saveUser(uid, name, email) {
         setError();
         const user = { uid, name, email }
-        await axios.put('http://localhost:5000/api/users', {
+        await axios.put('https://stormy-journey-43640.herokuapp.com/api/users', {
             user: user
         }).then(response => setError())
             .catch(error => {
@@ -99,7 +99,7 @@ const useFirebase = () => {
     }
 
     async function findUser(user) {
-        await axios.get(`http://localhost:5000/api/users/${user.uid}`)
+        await axios.get(`https://stormy-journey-43640.herokuapp.com/api/users/${user.uid}`)
             .then(res => {
                 user.role = res.data[0].role;
                 setUser(user)

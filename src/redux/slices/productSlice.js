@@ -4,7 +4,7 @@ import axios from 'axios';
 export const getProducts = createAsyncThunk(
     'products/getProducts',
     async () => {
-        const response = await axios.get('http://localhost:5000/api/products');
+        const response = await axios.get('https://stormy-journey-43640.herokuapp.com/api/products');
         return response.data;
     }
 )
@@ -12,7 +12,7 @@ export const getProducts = createAsyncThunk(
 export const getProduct = createAsyncThunk(
     'products/getProduct',
     async (id) => {
-        const response = await axios.get(`http://localhost:5000/api/products/${id}`);
+        const response = await axios.get(`https://stormy-journey-43640.herokuapp.com/api/products/${id}`);
         return response.data;
     }
 )
@@ -20,7 +20,7 @@ export const getProduct = createAsyncThunk(
 export const getFeaturedProduct = createAsyncThunk(
     'products/getFeaturedProducts',
     async (itemsCount) => {
-        const response = await axios.get(`http://localhost:5000/api/products?isFeatured=true&&limit=${itemsCount}`);
+        const response = await axios.get(`https://stormy-journey-43640.herokuapp.com/api/products?isFeatured=true&&limit=${itemsCount}`);
         return response.data;
     }
 )
@@ -28,14 +28,14 @@ export const getFeaturedProduct = createAsyncThunk(
 export const getRecommendedProduct = createAsyncThunk(
     'products/getRecommendedProducts',
     async (itemsCount) => {
-        const response = await axios.get(`http://localhost:5000/api/products?isRecommended=true&&limit=${itemsCount}`);
+        const response = await axios.get(`https://stormy-journey-43640.herokuapp.com/api/products?isRecommended=true&&limit=${itemsCount}`);
         return response.data;
     }
 )
 export const deleteProduct = createAsyncThunk(
     'products/deleteProduct',
     async (id) => {
-        const response = await axios.delete(`http://localhost:5000/api/products/${id}`);
+        const response = await axios.delete(`https://stormy-journey-43640.herokuapp.com/api/products/${id}`);
         return response.data;
     }
 )

@@ -62,7 +62,7 @@ const AddProduct = () => {
             setError(error.message)
         });
 
-        axios.post('http://localhost:5000/api/products', {
+        axios.post('https://stormy-journey-43640.herokuapp.com/api/products', {
             product: data
         }).then(res => {
             if (res) {

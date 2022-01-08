@@ -4,14 +4,14 @@ import axios from 'axios';
 export const getOrders = createAsyncThunk(
     'orders/getOrders',
     async () => {
-        const response = await axios.get('http://localhost:5000/api/orders');
+        const response = await axios.get('https://stormy-journey-43640.herokuapp.com/api/orders');
         return response.data;
     }
 )
 export const getMyOrders = createAsyncThunk(
     'orders/getMyOrders',
     async (id) => {
-        const response = await axios.get(`http://localhost:5000/api/orders/${id}`);
+        const response = await axios.get(`https://stormy-journey-43640.herokuapp.com/api/orders/${id}`);
         return response.data;
     }
 )
@@ -19,7 +19,7 @@ export const getMyOrders = createAsyncThunk(
 export const deleteOrder = createAsyncThunk(
     'orders/deleteOrder',
     async (id) => {
-        const response = await axios.delete(`http://localhost:5000/api/orders/${id}`);
+        const response = await axios.delete(`https://stormy-journey-43640.herokuapp.com/api/orders/${id}`);
         return response.data;
     }
 )

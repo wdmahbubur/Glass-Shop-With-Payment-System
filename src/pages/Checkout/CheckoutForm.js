@@ -29,7 +29,7 @@ const CheckoutForm = () => {
 
     const [clientSecret, setClientSecret] = useState();
     useEffect(() => {
-        axios.post("http://localhost:5000/api/create-payment-intent", {
+        axios.post("https://stormy-journey-43640.herokuapp.com/api/create-payment-intent", {
             amount: totalAmount
         }).then(res => setClientSecret(res.data.clientSecret))
     }, [totalAmount])
@@ -86,7 +86,7 @@ const CheckoutForm = () => {
                     uid: user.uid
                 }
             }
-            axios.post("http://localhost:5000/api/orders", {
+            axios.post("https://stormy-journey-43640.herokuapp.com/api/orders", {
                 orderInfo: orderInfo
             }).then(res => {
                 if (res.data.product) {

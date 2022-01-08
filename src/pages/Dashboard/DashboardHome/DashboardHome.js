@@ -38,7 +38,7 @@ const DashboardHome = () => {
 
     const handleOrderStatus = (event, id) => {
         setStatus(event.target.value)
-        axios.put(`http://localhost:5000/api/orders/${id}`, {
+        axios.put(`https://stormy-journey-43640.herokuapp.com/api/orders/${id}`, {
             status: status
         }).then(res => { })
     };
